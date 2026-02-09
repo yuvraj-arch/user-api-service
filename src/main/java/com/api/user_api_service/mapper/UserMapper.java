@@ -8,11 +8,13 @@ import com.api.user_api_service.model.UserResponse;
 public class UserMapper {
 
     public static User toEntity(UserRequest request) {
-        return User.builder()
-                .id(request.getUserId())
+        User user = User.builder()
+                .userId(request.getUserId())
                 .name(request.getName())
                 .email(request.getEmail())
                 .build();
+        user.setId(null);
+        return user;
     }
 
     public static UserResponse toResponse(User user) {
