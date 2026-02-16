@@ -9,7 +9,7 @@ public class UserMapper {
 
     public static User toEntity(UserRequest request) {
         return User.builder()
-                .userId(request.getUserId())
+                .id(request.getUserId())
                 .name(request.getName())
                 .email(request.getEmail())
                 .build();
